@@ -17,6 +17,7 @@ const upload = multer({
     cb(null, true);
   },
 });
+
 app.post("/rotate-pdf", upload.single("pdf"), async (req, res) => {
   const angle = parseInt(req.body.angle, 10); // Rotation angle from request body
   const pageNumbers = req.body.pages ? JSON.parse(req.body.pages) : []; // Page numbers to rotate

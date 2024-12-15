@@ -30,10 +30,13 @@ document.getElementById("rotateButton").addEventListener("click", () => {
 
         formData.append("pages", JSON.stringify(pages)); // Send pages array
 
-        const apiResponse = await fetch("http://localhost:3000/rotate-pdf", {
-          method: "POST",
-          body: formData,
-        });
+        const apiResponse = await fetch(
+          "https://autoflip-ahqb.onrender.com/rotate-pdf",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (apiResponse.ok) {
           const blob = await apiResponse.blob();
